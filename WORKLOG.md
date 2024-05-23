@@ -2,7 +2,11 @@
 
 ## Charles Hua
 
-### date x
+### 5/22/24
+
+Did research and made ciphers on paper to encode/decode.
+
+## date x
 
 info
 
@@ -13,9 +17,9 @@ info
 
 ## Lisa Li
 
-### date x
+### 5/22/24
 
-info
+Created the basic files needed for our programs (makefile, encode/decode) as well as started making our test files.
 
 ### date y
 
