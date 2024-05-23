@@ -2,7 +2,11 @@
 
 ## Charles Hua
 
-### date x
+### 5/22/24
+
+Did research and made ciphers on paper to encode/decode.
+
+## date x
 
 info
 
