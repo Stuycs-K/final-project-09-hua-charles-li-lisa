@@ -6,6 +6,10 @@
 
 Did research and made ciphers on paper to encode/decode.
 
+### 5/23/24
+
+Started coding the beginning of matrix multiplication.
+
 ## date x
 
 info
