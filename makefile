@@ -1,8 +1,8 @@
 encode:
-  @javac encoder.java
-  @java encoder $(ARGS)
+	@javac encoder.java
+	@java encoder encode $(ARGS)
 decode:
-  @javac decoder.java
-  @java decoder $(ARGS)
+	@javac decoder.java
+	@java decoder decode $(ARGS)
 clean:
 	@rm *.class
