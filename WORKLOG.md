@@ -10,6 +10,10 @@ Did research and made ciphers on paper to encode/decode.
 
 Started coding the beginning of matrix multiplication.
 
+### 5/24/24
+
+Research on how to decode, how to get the inverse matrix.
+
 ## date x
 
 info
