@@ -49,9 +49,15 @@ public class encoder{
 
   public static void encoded (String plaintext, int[][] key){
     int[][] mat = new int[1][3];
+    int[] list = new int[0];
     for (int i = 0; i < mat[0].length; i++){
       mat[0][i] = plaintext.charAt(i) - 65;
       System.out.println("mat[0][" + i + "]: " + mat[0][i]);
+    }
+    for (int j = 0; j < mat[0].length; j++){
+      for (int k = 0; k < mat[0].length; k++){
+        list[j] = key[j][k] * mat[j]; 
+      }
     }
 
     /*for(int i = 0; i < plaintext.length(); i++){
