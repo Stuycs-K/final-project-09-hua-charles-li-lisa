@@ -44,6 +44,27 @@ public class decoder{
       }
     }
     System.out.println("");
-    //encoded(plaintext, key1);
+    decoded(ciphertext, key1);
+  }
+
+
+  public static void decoded (String ciphertext, int[][] key){
+    int[][] mat = new int[1][3];
+    for (int i = 0; i < mat[0].length; i++){
+      mat[0][i] = ciphertext.charAt(i) - 65;
+      System.out.println("mat[0][" + i + "]: " + mat[0][i]);
+    }
+    int det = key[0][0]*(key[1][1]*key[2][2] - key[1][2]*key[2][1])
+            - key[0][1]*(key[1][0]*key[2][2] - key[1][2]*key[2][0])
+            + key[0][2]*(key[1][0]*key[2][1] - key[1][1]*key[2][0]);
+
+    System.out.println(det);
+    /*int[][] identity = {1, 0, 0, 0, 1, 0, 0, 0, 1};
+    int[][] inverse = new int[3][3];
+    for (int i = 0; i < key.length; i++){
+      for (int j = 0; j < key[0].length; j++){
+
+      }
+    }*/
   }
 }
