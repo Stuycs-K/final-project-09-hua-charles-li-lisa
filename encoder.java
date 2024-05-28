@@ -55,8 +55,8 @@ public class encoder{
       System.out.println("mat[0][" + i + "]: " + mat[0][i]);
     }
     for (int j = 0; j < mat[0].length; j++){
-      for (int k = 0; k < mat[0].length; k++){
-        list[j] = key[j][k] * mat[j]; 
+      for (int k = 0; k < key[0].length; k++){
+        list[j] = list[j] + key[j][k] * mat[j]; 
       }
     }
 
