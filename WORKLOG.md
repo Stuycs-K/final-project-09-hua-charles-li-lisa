@@ -25,6 +25,10 @@ info
 
 Created the basic files needed for our programs (makefile, encode/decode) as well as started making our test files.
 
-### date y
+### 5/23/24
 
-info
+Finished creating the first test files (plaintext, key, and ciphertext). Fixed the makefile to run ARGS. Starting to scan the files of the text files into their respective variables.
+
+## 5/24/24
+
+Successfully read the contents into strings and an integer array. 

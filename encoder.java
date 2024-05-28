@@ -24,6 +24,24 @@ public class encoder{
     skey.close();
     System.out.println(keytext);
 
+    Scanner skey2 = new Scanner(keytext);
+    int[][] key1 = new int[3][3];
+    int row = 0;
+    int col = 0;
+    while (skey2.hasNextInt()) {
+      key1[row][col] = skey2.nextInt();
+      col++;
+      if (col == 3){
+        row++;
+        col = 0;
+      }
+    }
+    skey2.close();
+    for (int i = 0; i < key1.length; i++){
+      for (int j = 0; j < key1[i].length; j++){
+        System.out.println("key[" + i + "][" + j + "]: " + key1[i][j]);
+      }
+    }
   }
 
   public static void encoded (String plaintext, int[][] key){
