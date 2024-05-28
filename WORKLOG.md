@@ -35,4 +35,4 @@ Finished creating the first test files (plaintext, key, and ciphertext). Fixed t
 
 ## 5/24/24
 
-Successfully read the contents into strings and an integer array. 
+Successfully read the contents into strings and an integer array. Changed plaintext into vector (message to integer array).

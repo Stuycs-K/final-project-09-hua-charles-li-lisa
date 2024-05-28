@@ -13,8 +13,8 @@ public class encoder{
       plaintext = splain.nextLine();
     }
     splain.close();
-    System.out.println(plaintext);
-
+    System.out.println("PLAINTEXT: " + plaintext);
+    System.out.println("");
     File key = new File(args[2]);
     Scanner skey = new Scanner(key);
     String keytext = "";
@@ -22,7 +22,7 @@ public class encoder{
       keytext = skey.nextLine();
     }
     skey.close();
-    System.out.println(keytext);
+    //System.out.println(keytext);
 
     Scanner skey2 = new Scanner(keytext);
     int[][] key1 = new int[3][3];
@@ -37,20 +37,28 @@ public class encoder{
       }
     }
     skey2.close();
+
     for (int i = 0; i < key1.length; i++){
       for (int j = 0; j < key1[i].length; j++){
         System.out.println("key[" + i + "][" + j + "]: " + key1[i][j]);
       }
     }
+    System.out.println("");
+    encoded(plaintext, key1);
   }
 
   public static void encoded (String plaintext, int[][] key){
-    //int[][] mat = 0;
-    for(int i = 0; i < plaintext.length(); i++){
+    int[][] mat = new int[1][3];
+    for (int i = 0; i < mat[0].length; i++){
+      mat[0][i] = plaintext.charAt(i) - 65;
+      System.out.println("mat[0][" + i + "]: " + mat[0][i]);
+    }
+
+    /*for(int i = 0; i < plaintext.length(); i++){
       if (i % key.length == key.length - 1){
         //mat[i-key.length+1][1] = (plaintext.charAt(i-key.length + 1) - 65) * key[i - key.length + 1][i - key.length + 1];
         System.out.println("hi");
       }
-    }
+    }*/
   }
 }
