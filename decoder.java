@@ -13,8 +13,8 @@ public class decoder{
       ciphertext = scipher.nextLine();
     }
     scipher.close();
-    System.out.println("CIPHERTEXT: " + ciphertext);
-    System.out.println("");
+    //System.out.println("CIPHERTEXT: " + ciphertext);
+    //System.out.println("");
     File key = new File(args[2]);
     Scanner skey = new Scanner(key);
     String keytext = "";
@@ -40,10 +40,10 @@ public class decoder{
 
     for (int i = 0; i < key1.length; i++){
       for (int j = 0; j < key1[i].length; j++){
-        System.out.println("key[" + i + "][" + j + "]: " + key1[i][j]);
+        //System.out.println("key[" + i + "][" + j + "]: " + key1[i][j]);
       }
     }
-    System.out.println("");
+    //System.out.println("");
     decoded(ciphertext, key1);
   }
 
@@ -52,7 +52,7 @@ public class decoder{
     int[][] mat = new int[1][3];
     for (int i = 0; i < mat[0].length; i++){
       mat[0][i] = ciphertext.charAt(i) - 65;
-      System.out.println("mat[0][" + i + "]: " + mat[0][i]);
+      //System.out.println("mat[0][" + i + "]: " + mat[0][i]);
     }
     int det = key[0][0]*(key[1][1]*key[2][2] - key[1][2]*key[2][1])
             - key[0][1]*(key[1][0]*key[2][2] - key[1][2]*key[2][0])
@@ -61,13 +61,13 @@ public class decoder{
           - b(di-fg)
           + c(dh-eg)
     */
-    System.out.println("");
-    System.out.println("Det: " + det);
+    //System.out.println("");
+    //System.out.println("Det: " + det);
     if (det != 0){
       System.out.println("There is an inverse.");
     } else System.out.println("This is singular.");
     //int[][] identity = {1, 0, 0, 0, 1, 0, 0, 0, 1};
-    System.out.println("");
+    //System.out.println("");
 
     int[][] cofac = new int[3][3];
     cofac[0][0] = key[1][1]*key[2][2] - key[1][2]*key[2][1];
@@ -116,8 +116,22 @@ public class decoder{
       for (int j = 0; j < inverse[0].length; j++){
         inverse[i][j] *= midet;
         inverse[i][j] = inverse[i][j] % 26;
-        System.out.println("inverse[" + i + "][" + j + "]: " + inverse[i][j]);
+        //System.out.println("inverse[" + i + "][" + j + "]: " + inverse[i][j]);
       }
+    }
+    //System.out.println("");
+
+    int[][] plain = new int[1][3];
+    plain[0][0] = inverse[0][0] * mat[0][0] + inverse[0][1] * mat[0][1] + inverse[0][2] * mat[0][2];
+    plain[0][1] = inverse[1][0] * mat[0][0] + inverse[1][1] * mat[0][1] + inverse[1][2] * mat[0][2];
+    plain[0][2] = inverse[2][0] * mat[0][0] + inverse[2][1] * mat[0][1] + inverse[2][2] * mat[0][2];
+    for (int i = 0; i < plain[0].length; i++){
+      plain[0][i] %= 26;
+      //System.out.println("plain[0][" + i + "]: " + plain[0][i]);
+    }
+    System.out.print("\nDecoded Message: ");
+    for (int i = 0; i < plain[0].length; i++){
+      System.out.print((char) (plain[0][i] + 65));
     }
   }
 }
