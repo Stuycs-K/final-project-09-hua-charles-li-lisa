@@ -56,7 +56,7 @@ public class encoder{
     }
     for (int j = 0; j < mat[0].length; j++){
       for (int k = 0; k < key[0].length; k++){
-        list[j] = list[j] + key[j][k] * mat[j]; 
+        list[j] = list[j] + key[j][k] * mat[0][j]; 
       }
     }
 
