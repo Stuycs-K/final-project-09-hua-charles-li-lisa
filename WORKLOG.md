@@ -14,6 +14,10 @@ Started coding the beginning of matrix multiplication.
 
 Research on how to decode, how to get the inverse matrix.
 
+### 5/28/24
+
+Worked on mutiplying the first row by the column in encode.
+
 ## date x
 
 info
@@ -36,3 +40,7 @@ Finished creating the first test files (plaintext, key, and ciphertext). Fixed t
 ## 5/24/24
 
 Successfully read the contents into strings and an integer array. Changed plaintext into vector (message to integer array).
+
+## 5/28/24
+
+Working on the decode method (translating ciphertext to int array). Started to work on inversing matrices by first seeing if there is an inverse by calculating the determinant. Was able to find the inverse matrix through determinant/cofactor matrix/adjacent matrix.
