@@ -119,5 +119,14 @@ public class decoder{
         System.out.println("inverse[" + i + "][" + j + "]: " + inverse[i][j]);
       }
     }
+    System.out.println("");
+
+    int[][] plain = new int[1][3];
+    plain[0][0] = inverse[0][0] * mat[0][0] + inverse[0][1] * mat[0][1] + inverse[0][2] * mat[0][2];
+    plain[0][1] = inverse[1][0] * mat[0][0] + inverse[1][1] * mat[0][1] + inverse[1][2] * mat[0][2];
+    plain[0][2] = inverse[2][0] * mat[0][0] + inverse[2][1] * mat[0][1] + inverse[2][2] * mat[0][2];
+    for (int i = 0; i < plain[0].length; i++){
+      System.out.println("plain[0][" + i + "]: " + plain[0][i]);
+    }
   }
 }
