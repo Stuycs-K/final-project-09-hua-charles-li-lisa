@@ -36,3 +36,7 @@ Finished creating the first test files (plaintext, key, and ciphertext). Fixed t
 ## 5/24/24
 
 Successfully read the contents into strings and an integer array. Changed plaintext into vector (message to integer array).
+
+## 5/28/24
+
+Working on the decode method (translating ciphertext to int array). Started to work on inversing matrices by first seeing if there is an inverse by calculating the determinant.
