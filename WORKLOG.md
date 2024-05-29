@@ -44,3 +44,7 @@ Successfully read the contents into strings and an integer array. Changed plaint
 ## 5/28/24
 
 Working on the decode method (translating ciphertext to int array). Started to work on inversing matrices by first seeing if there is an inverse by calculating the determinant. Was able to find the inverse matrix through determinant/cofactor matrix/adjacent matrix.
+
+## 5/29/24
+
+Completed the decode method (and check if inverse is possible) for 3X3 matrices but still need to test on other cases. Created test case for 2X2 matrices but may need to change the format of the key text files for it to work.
