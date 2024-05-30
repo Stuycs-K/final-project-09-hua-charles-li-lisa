@@ -56,10 +56,13 @@ public class encoder{
     }
     for (int j = 0; j < list.length; j++){
       for (int k = 0; k < key[0].length; k++){
-        list[j] = list[j] + key[j][k] * mat[0][j]; 
+        list[j] = list[j] + key[j][k] * mat[0][k]; 
       }
     }
-    System.out.println(list[0]);
+    for (int l = 0; l < list[].length; l++){
+      System.out.print(list[l]);
+    }
+
     /*for(int i = 0; i < plaintext.length(); i++){
       if (i % key.length == key.length - 1){
         //mat[i-key.length+1][1] = (plaintext.charAt(i-key.length + 1) - 65) * key[i - key.length + 1][i - key.length + 1];
