@@ -59,7 +59,7 @@ public class encoder{
         list[j] = list[j] + key[j][k] * mat[0][k]; 
       }
     }
-    for (int l = 0; l < list[].length; l++){
+    for (int l = 0; l < list.length; l++){
       System.out.print(list[l]);
     }
 
