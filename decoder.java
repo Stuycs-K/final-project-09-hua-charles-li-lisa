@@ -23,32 +23,59 @@ public class decoder{
     }
     skey.close();
     //System.out.println(keytext);
-
-    Scanner skey2 = new Scanner(keytext);
-    int[][] key1 = new int[3][3];
-    int row = 0;
-    int col = 0;
-    while (skey2.hasNextInt()) {
-      key1[row][col] = skey2.nextInt();
-      col++;
-      if (col == 3){
-        row++;
-        col = 0;
+    if (keytext.length() == 9){
+      Scanner skey2 = new Scanner(keytext);
+      int[][] key1 = new int[3][3];
+      int row = 0;
+      int col = 0;
+      int k = 0;
+      while (k < keytext.length()) {
+        key1[row][col] = keytext.charAt(k) - 65;
+        col++;
+        if (col == 3){
+          row++;
+          col = 0;
+        }
+        k++;
       }
-    }
-    skey2.close();
+      skey2.close();
 
-    for (int i = 0; i < key1.length; i++){
-      for (int j = 0; j < key1[i].length; j++){
-        //System.out.println("key[" + i + "][" + j + "]: " + key1[i][j]);
+      for (int i = 0; i < key1.length; i++){
+        for (int j = 0; j < key1[i].length; j++){
+          System.out.println("key[" + i + "][" + j + "]: " + key1[i][j]);
+        }
       }
+      System.out.println("");
+      decoded3(ciphertext, key1);
+
+    } else if (keytext.length() == 4){
+      int[][] key1 = new int[2][2];
+      int row = 0;
+      int col = 0;
+      int k = 0;
+      while (k < keytext.length()) {
+        key1[row][col] = keytext.charAt(k) - 65;
+        col++;
+        if (col == 2){
+          row++;
+          col = 0;
+        }
+        k++;
+      }
+
+      for (int i = 0; i < key1.length; i++){
+        for (int j = 0; j < key1[i].length; j++){
+          System.out.println("key[" + i + "][" + j + "]: " + key1[i][j]);
+        }
+      }
+
+      System.out.println("");
     }
-    //System.out.println("");
-    decoded(ciphertext, key1);
+
   }
 
 
-  public static void decoded (String ciphertext, int[][] key){
+  public static void decoded3 (String ciphertext, int[][] key){
     boolean inverseM = false;
     int[][] mat = new int[1][3];
     for (int i = 0; i < mat[0].length; i++){
