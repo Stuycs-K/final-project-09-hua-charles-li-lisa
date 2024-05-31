@@ -18,6 +18,10 @@ Research on how to decode, how to get the inverse matrix.
 
 Worked on mutiplying the first row by the column in encode.
 
+### 5/30/24
+
+Finished the matrix multiplication.
+
 ## date x
 
 info
