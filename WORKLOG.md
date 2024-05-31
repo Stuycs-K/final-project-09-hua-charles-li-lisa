@@ -48,3 +48,7 @@ Working on the decode method (translating ciphertext to int array). Started to w
 ## 5/29/24
 
 Completed the decode method (and check if inverse is possible) for 3X3 matrices but still need to test on other cases. Created test case for 2X2 matrices but may need to change the format of the key text files for it to work.
+
+## 5/30/24
+
+Changing the test files for the key to be letters instead of numbers. Will need to change how we parse the file.
