@@ -59,10 +59,11 @@ public class encoder{
         list[0][j] = list[0][j] + key[j][k] * mat[0][k]; 
       }
     }
+    System.out.println("");
     for (int n = 0; n < list[0].length; n++){
-      System.out.println(list[0][n]);
+      System.out.print((char)((list[0][n] % 26) + 65));
     }
-    
+    System.out.println("");
 
     /*for(int i = 0; i < plaintext.length(); i++){
       if (i % key.length == key.length - 1){
