@@ -168,10 +168,10 @@ public class decoder{
 
   public static void decoded2 (String ciphertext, int[][] key){
     boolean inverseM = false;
-    int[][] mat = new int[1][2];
-    for (int i = 0; i < mat[0].length; i++){
-      mat[0][i] = ciphertext.charAt(i) - 65;
-      //System.out.println("mat[0][" + i + "]: " + mat[0][i]);
+    int[][] mat = new int[2][1];
+    for (int i = 0; i < mat.length; i++){
+      mat[i][0] = ciphertext.charAt(i) - 65;
+      //System.out.println("mat[" + i + "][0]: " + mat[i][0]);
     }
     int det = key[0][0]*key[1][1] - key[0][1]*key[1][0];
     //det = ad - bc
@@ -199,7 +199,7 @@ public class decoder{
             adj[i][j] %= 26;
             adj[i][j] = 26 + adj[i][j];
           } else adj[i][j] %= 26;
-          System.out.println("adj[" + i + "][" + j + "]: " + adj[i][j]);
+          //System.out.println("adj[" + i + "][" + j + "]: " + adj[i][j]);
         }
       }
       int[][] inverse = new int[2][2];
@@ -217,10 +217,11 @@ public class decoder{
         }
         a++;
       }
-      System.out.println("Midet: " + midet);
-/*
+      //System.out.println("Midet: " + midet);
+
       for (int i = 0; i < inverse.length; i++){
         for (int j = 0; j < inverse[0].length; j++){
+          inverse[i][j] = adj[i][j];
           inverse[i][j] *= midet;
           inverse[i][j] = inverse[i][j] % 26;
           //System.out.println("inverse[" + i + "][" + j + "]: " + inverse[i][j]);
@@ -228,18 +229,17 @@ public class decoder{
       }
       //System.out.println("");
 
-      int[][] plain = new int[1][3];
-      plain[0][0] = inverse[0][0] * mat[0][0] + inverse[0][1] * mat[0][1] + inverse[0][2] * mat[0][2];
-      plain[0][1] = inverse[1][0] * mat[0][0] + inverse[1][1] * mat[0][1] + inverse[1][2] * mat[0][2];
-      plain[0][2] = inverse[2][0] * mat[0][0] + inverse[2][1] * mat[0][1] + inverse[2][2] * mat[0][2];
-      for (int i = 0; i < plain[0].length; i++){
-        plain[0][i] %= 26;
-        //System.out.println("plain[0][" + i + "]: " + plain[0][i]);
+      int[][] plain = new int[2][1];
+      plain[0][0] = inverse[0][0]*mat[0][0] + inverse[0][1]*mat[1][0];
+      plain[1][0] = inverse[1][0]*mat[0][0] + inverse[1][1]*mat[1][0];
+      for (int i = 0; i < plain.length; i++){
+        plain[i][0] %= 26;
+        //System.out.println("plain[" + i + "][0]: " + plain[i][0]);
       }
       System.out.print("\nDecoded Message: ");
-      for (int i = 0; i < plain[0].length; i++){
-        System.out.print((char) (plain[0][i] + 65));
-      }*/
+      for (int i = 0; i < plain.length; i++){
+        System.out.print((char) (plain[i][0] + 65));
+      }
     }
   }
 }
