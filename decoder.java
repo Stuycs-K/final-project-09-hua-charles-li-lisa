@@ -131,39 +131,50 @@ public class decoder{
         }
       }
 
-      int midet = det % 26;
-      int a = midet;
+      int midet = 0;
+      int a = 2;
+      int tmp = (1 * midet) % 26;
+      if (det < 0){
+        //midet = 26 + det;
+        midet = 26 + det;
+      } else midet = det % 26;
       while (true){
         if ((a * midet) % 26 == 1){
           midet = a;
           break;
         }
+        if (tmp == (a * midet) % 26){
+          System.out.println("There is no modular muliplicative inverse.");
+          inverseM = false;
+          break;
+        }
         a++;
       }
       //System.out.println("Midet: " + midet);
-
-      for (int i = 0; i < inverse.length; i++){
-        for (int j = 0; j < inverse[0].length; j++){
-          inverse[i][j] *= midet;
-          inverse[i][j] = inverse[i][j] % 26;
-          //System.out.println("inverse[" + i + "][" + j + "]: " + inverse[i][j]);
+      if (inverseM){
+        for (int i = 0; i < inverse.length; i++){
+          for (int j = 0; j < inverse[0].length; j++){
+            inverse[i][j] *= midet;
+            inverse[i][j] = inverse[i][j] % 26;
+            //System.out.println("inverse[" + i + "][" + j + "]: " + inverse[i][j]);
+          }
         }
-      }
-      //System.out.println("");
+        //System.out.println("");
 
-      int[][] plain = new int[1][3];
-      plain[0][0] = inverse[0][0] * mat[0][0] + inverse[0][1] * mat[0][1] + inverse[0][2] * mat[0][2];
-      plain[0][1] = inverse[1][0] * mat[0][0] + inverse[1][1] * mat[0][1] + inverse[1][2] * mat[0][2];
-      plain[0][2] = inverse[2][0] * mat[0][0] + inverse[2][1] * mat[0][1] + inverse[2][2] * mat[0][2];
-      for (int i = 0; i < plain[0].length; i++){
-        plain[0][i] %= 26;
-        //System.out.println("plain[0][" + i + "]: " + plain[0][i]);
-      }
-      System.out.print("\nDecoded Message: ");
-      for (int i = 0; i < plain[0].length; i++){
-        System.out.print((char) (plain[0][i] + 65));
-      }
-    }
+        int[][] plain = new int[1][3];
+        plain[0][0] = inverse[0][0] * mat[0][0] + inverse[0][1] * mat[0][1] + inverse[0][2] * mat[0][2];
+        plain[0][1] = inverse[1][0] * mat[0][0] + inverse[1][1] * mat[0][1] + inverse[1][2] * mat[0][2];
+        plain[0][2] = inverse[2][0] * mat[0][0] + inverse[2][1] * mat[0][1] + inverse[2][2] * mat[0][2];
+        for (int i = 0; i < plain[0].length; i++){
+          plain[0][i] %= 26;
+          //System.out.println("plain[0][" + i + "]: " + plain[0][i]);
+        }
+        System.out.print("\nDecoded Message: ");
+        for (int i = 0; i < plain[0].length; i++){
+          System.out.print((char) (plain[0][i] + 65));
+        }
+      } else System.out.println("Cannot decode this message.");
+    } else System.out.println("Cannot decode this message.");
   }
 
   public static void decoded2 (String ciphertext, int[][] key){
@@ -205,41 +216,48 @@ public class decoder{
       int[][] inverse = new int[2][2];
 
       int midet = 0;
+      int a = 2;
+      int tmp = (1 * midet) % 26;
       if (det < 0){
         //midet = 26 + det;
         midet = 26 + det;
       } else midet = det % 26;
-      int a = 0;
       while (true){
         if ((a * midet) % 26 == 1){
           midet = a;
           break;
         }
+        if (tmp == (a * midet) % 26){
+          System.out.println("There is no modular muliplicative inverse.");
+          inverseM = false;
+          break;
+        }
         a++;
       }
       //System.out.println("Midet: " + midet);
-
-      for (int i = 0; i < inverse.length; i++){
-        for (int j = 0; j < inverse[0].length; j++){
-          inverse[i][j] = adj[i][j];
-          inverse[i][j] *= midet;
-          inverse[i][j] = inverse[i][j] % 26;
-          //System.out.println("inverse[" + i + "][" + j + "]: " + inverse[i][j]);
+      if (inverseM){
+        for (int i = 0; i < inverse.length; i++){
+          for (int j = 0; j < inverse[0].length; j++){
+            inverse[i][j] = adj[i][j];
+            inverse[i][j] *= midet;
+            inverse[i][j] = inverse[i][j] % 26;
+            //System.out.println("inverse[" + i + "][" + j + "]: " + inverse[i][j]);
+          }
         }
-      }
-      //System.out.println("");
+        //System.out.println("");
 
-      int[][] plain = new int[2][1];
-      plain[0][0] = inverse[0][0]*mat[0][0] + inverse[0][1]*mat[1][0];
-      plain[1][0] = inverse[1][0]*mat[0][0] + inverse[1][1]*mat[1][0];
-      for (int i = 0; i < plain.length; i++){
-        plain[i][0] %= 26;
-        //System.out.println("plain[" + i + "][0]: " + plain[i][0]);
-      }
-      System.out.print("\nDecoded Message: ");
-      for (int i = 0; i < plain.length; i++){
-        System.out.print((char) (plain[i][0] + 65));
-      }
-    }
+        int[][] plain = new int[2][1];
+        plain[0][0] = inverse[0][0]*mat[0][0] + inverse[0][1]*mat[1][0];
+        plain[1][0] = inverse[1][0]*mat[0][0] + inverse[1][1]*mat[1][0];
+        for (int i = 0; i < plain.length; i++){
+          plain[i][0] %= 26;
+          //System.out.println("plain[" + i + "][0]: " + plain[i][0]);
+        }
+        System.out.print("\nDecoded Message: ");
+        for (int i = 0; i < plain.length; i++){
+          System.out.print((char) (plain[i][0] + 65));
+        }
+      } else System.out.println("Cannot decode this message.");
+    } else System.out.println("Cannot decode this message.");
   }
 }
