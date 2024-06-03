@@ -43,8 +43,13 @@ public class decoder{
           System.out.println("key[" + i + "][" + j + "]: " + key1[i][j]);
         }
       }*/
-      System.out.println("");
-      decoded3(ciphertext, key1);
+      System.out.print("\nDecoded Message: ");
+      if (ciphertext.length() > 3){
+        for (int i = 0; i < ciphertext.length(); i+=3){
+          String x = ciphertext.substring(i, i+3);
+          decoded3(x, key1);
+        }
+      } else decoded3(ciphertext, key1);
 
     } else if (keytext.length() == 4){
       int[][] key1 = new int[2][2];
@@ -90,10 +95,10 @@ public class decoder{
     //System.out.println("");
     //System.out.println("Det: " + det);
     if (det != 0){
-      System.out.println("There is an inverse.");
+      //System.out.println("There is an inverse.");
       inverseM = true;
     } else {
-      System.out.println("This is singular.");
+      //System.out.println("This is singular.");
       inverseM = false;
     }
     //int[][] identity = {1, 0, 0, 0, 1, 0, 0, 0, 1};
@@ -169,7 +174,6 @@ public class decoder{
           plain[0][i] %= 26;
           //System.out.println("plain[0][" + i + "]: " + plain[0][i]);
         }
-        System.out.print("\nDecoded Message: ");
         for (int i = 0; i < plain[0].length; i++){
           System.out.print((char) (plain[0][i] + 65));
         }
@@ -189,10 +193,10 @@ public class decoder{
     //System.out.println("");
     //System.out.println("Det: " + det);
     if (det != 0){
-      System.out.println("There is an inverse.");
+      //System.out.println("There is an inverse.");
       inverseM = true;
     } else {
-      System.out.println("This is singular.");
+      //System.out.println("This is singular.");
       inverseM = false;
     }
     //int[][] identity = {1, 0, 0, 0, 1, 0, 0, 0, 1};
@@ -253,7 +257,6 @@ public class decoder{
           plain[i][0] %= 26;
           //System.out.println("plain[" + i + "][0]: " + plain[i][0]);
         }
-        System.out.print("\nDecoded Message: ");
         for (int i = 0; i < plain.length; i++){
           System.out.print((char) (plain[i][0] + 65));
         }
