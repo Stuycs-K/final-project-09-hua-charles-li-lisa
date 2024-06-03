@@ -61,11 +61,11 @@ public class decoder{
         k++;
       }
 
-      /*for (int i = 0; i < key1.length; i++){
+      for (int i = 0; i < key1.length; i++){
         for (int j = 0; j < key1[i].length; j++){
           System.out.println("key[" + i + "][" + j + "]: " + key1[i][j]);
         }
-      }*/
+      }
 
       System.out.println("");
       decoded2(ciphertext, key1);
