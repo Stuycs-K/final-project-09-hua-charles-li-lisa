@@ -56,3 +56,7 @@ Completed the decode method (and check if inverse is possible) for 3X3 matrices 
 ## 5/30/24
 
 Changing the test files for the key to be letters instead of numbers. Will need to change how we parse the file.
+
+## 5/31/24
+
+Tested a case that won't work with the method to make sure all calculations are correct (no modular multiplicative inverse means you can't inverse the matrix with our method).
