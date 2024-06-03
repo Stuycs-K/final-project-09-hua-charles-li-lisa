@@ -60,7 +60,7 @@ public class encoder{
       }
     }
     System.out.println("");
-    for (int n = 0; n < list[0].length; n++){
+    for (int n = 0; n < plaintext.length; n++){
       System.out.print((char)((list[0][n] % 26) + 65));
     }
     System.out.println("");
