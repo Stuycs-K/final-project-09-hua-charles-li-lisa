@@ -16,27 +16,28 @@ public class encoder{
     System.out.println("PLAINTEXT: " + plaintext);
     System.out.println("");
     File key = new File(args[2]);
-    Scanner skey = new Scanner(key);
+    //Scanner skey = new Scanner(key);
     String keytext = "";
-    while (skey.hasNextLine()) {
+    /*while (skey.hasNextLine()) {
       keytext = skey.nextLine();
     }
-    skey.close();
+    skey.close();*/
     //System.out.println(keytext);
 
-    Scanner skey2 = new Scanner(keytext);
+    //Scanner skey2 = new Scanner(keytext);
     int[][] key1 = new int[3][3];
     int row = 0;
     int col = 0;
-    while (skey2.hasNextInt()) {
-      key1[row][col] = skey2.nextInt();
+    int a = 0;
+    while (a < keytext.length()) {
+      key1[row][col] = keytext.charAt(a);
       col++;
       if (col == 3){
         row++;
         col = 0;
       }
     }
-    skey2.close();
+    //skey2.close();
 
     for (int i = 0; i < key1.length; i++){
       for (int j = 0; j < key1[i].length; j++){
@@ -49,19 +50,22 @@ public class encoder{
 
   public static void encoded (String plaintext, int[][] key){
     int[][] mat = new int[1][3];
-    int[][] list = new int[1][3];
+    int[][] list = new int[1][plaintext.length()];
     for (int i = 0; i < mat[0].length; i++){
       mat[0][i] = plaintext.charAt(i) - 65;
       System.out.println("mat[0][" + i + "]: " + mat[0][i]);
     }
-    for (int j = 0; j < list[0].length; j++){
+    for (int j = 0; j < plaintext.length(); j++){
       for (int k = 0; k < key[0].length; k++){
-        list[0][j] = list[0][j] + key[j][k] * mat[0][k]; 
+        for (int l = 0; l < 3; l++){
+          list[0][j] = list[0][j] + key[l][k] * mat[0][k]; 
+        }
       }
     }
     System.out.println("");
-    for (int n = 0; n < plaintext.length; n++){
-      System.out.print((char)((list[0][n] % 26) + 65));
+    for (int n = 0; n < plaintext.length(); n++){
+      //System.out.print((char)((list[0][n] % 26) + 65));
+      System.out.print(list[0][n]);
     }
     System.out.println("");
 
