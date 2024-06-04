@@ -22,6 +22,10 @@ Worked on mutiplying the first row by the column in encode.
 
 Finished the matrix multiplication.
 
+### 6/3
+
+Worked on trying to be able to multiply when the plaintext was longer than 3 characters.
+
 ## date x
 
 info
