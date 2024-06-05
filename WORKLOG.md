@@ -1,5 +1,11 @@
 # Work Log
 
+## References and Resources
+
+Wikipedia: https://en.wikipedia.org/wiki/Hill_cipher
+Dcode: https://www.dcode.fr/hill-cipher
+Crypto Cornerr: https://crypto.interactive-maths.com/hill-cipher.html
+
 ## Charles Hua
 
 ### 5/22/24
@@ -68,3 +74,5 @@ Tested a case that won't work with the method to make sure all calculations are 
 ## 6/03/24
 
 Make the ciphertext message longer than just 2 or 3 and still be able to decode the message. Did testing for 3x3s but still need to do testing for 2x2s.
+
+## 6/05/24

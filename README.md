@@ -3,3 +3,4 @@
 ## Group Info
 ## Overview
 ## Instructions
+For encode mode, provide the plaintext and keytext in separate files, all capitalized, no spaces. For decode mode, provide the ciphertext and keytext in separate files, all capitalized, no spaces. To run, type in the command prompt: make encode/decode ARGS="plain.txt/cipher.txt key.txt", which will either encode or try to decode the message.

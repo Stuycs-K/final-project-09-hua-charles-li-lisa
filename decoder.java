@@ -71,7 +71,7 @@ public class decoder{
           System.out.println("key[" + i + "][" + j + "]: " + key1[i][j]);
         }
       }*/
-
+      System.out.print("\nDecoded Message: ");
       if (ciphertext.length() > 2){
         for (int i = 0; i < ciphertext.length(); i+=2){
           String x = ciphertext.substring(i, i+2);
