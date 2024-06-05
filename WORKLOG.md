@@ -60,3 +60,7 @@ Changing the test files for the key to be letters instead of numbers. Will need 
 ## 5/31/24
 
 Tested a case that won't work with the method to make sure all calculations are correct (no modular multiplicative inverse means you can't inverse the matrix with our method).
+
+## 6/03/24
+
+Make the ciphertext message longer than just 2 or 3 and still be able to decode the message. Did testing for 3x3s but still need to do testing for 2x2s.
