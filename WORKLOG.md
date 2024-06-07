@@ -76,3 +76,5 @@ Tested a case that won't work with the method to make sure all calculations are 
 Make the ciphertext message longer than just 2 or 3 and still be able to decode the message. Did testing for 3x3s but still need to do testing for 2x2s.
 
 ## 6/05/24
+
+Make more test cases (aka long 2x2 messages), add references/resources, planning presentation information, readme instructions
