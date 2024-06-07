@@ -28,17 +28,13 @@ Worked on mutiplying the first row by the column in encode.
 
 Finished the matrix multiplication.
 
-### 6/3
+### 6/3/24
 
 Worked on trying to be able to multiply when the plaintext was longer than 3 characters.
 
-## date x
+### 6/5/24
 
-info
-
-### date y
-
-info
+Finished encode for 2x2 and 3x3 keys.
 
 
 ## Lisa Li
