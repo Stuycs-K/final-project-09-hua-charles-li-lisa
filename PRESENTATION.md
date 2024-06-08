@@ -12,6 +12,7 @@ Show a 3x3 matrix times a 3x1 matrix to show how it works so its easier to show 
 Hill cipher encode:
 
 key space size:
+Explain CRT
 Show the formula and show the number for 2x2 and 3x3 matrices.
 
 demo:
