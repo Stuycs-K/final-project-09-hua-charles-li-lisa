@@ -3,7 +3,7 @@ import java.io.FileNotFoundException;
 import java.util.Scanner;
 import java.lang.Math;
 
-public class encoder2{
+public class encoder{
   public static void main (String[] args) throws FileNotFoundException{
     //System.out.println(args[1]);
     File plain1 = new File(args[1]);
@@ -92,7 +92,7 @@ public class encoder2{
     }
     for (int j = 0; j < list[0].length; j++){
       for (int k = 0; k < key[0].length; k++){
-        list[0][j] = list[0][j] + key[j][k] * mat[0][k]; 
+        list[0][j] = list[0][j] + key[j][k] * mat[0][k];
       }
     }
     for (int n = 0; n < list[0].length; n++){
@@ -108,7 +108,7 @@ public class encoder2{
     }
     for (int j = 0; j < list[0].length; j++){
       for (int k = 0; k < key[0].length; k++){
-        list[0][j] = list[0][j] + key[j][k] * mat[0][k]; 
+        list[0][j] = list[0][j] + key[j][k] * mat[0][k];
       }
     }
     for (int n = 0; n < list[0].length; n++){
