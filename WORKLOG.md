@@ -73,4 +73,8 @@ Make the ciphertext message longer than just 2 or 3 and still be able to decode 
 
 ## 6/05/24
 
-Make more test cases (aka long 2x2 messages), add references/resources, planning presentation information, readme instructions
+Make more test cases (aka long 2x2 messages), add references/resources, planning presentation information, readme instructions.
+
+## 6/07/24
+
+Updating PRESENTATION.md, figuring out with the other group how we should split the topics for the video, as well as within my group.
