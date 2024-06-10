@@ -35,6 +35,14 @@ Worked on trying to be able to multiply when the plaintext was longer than 3 cha
 
 Finished encode for 2x2 and 3x3 keys.
 
+### 6/7/24
+
+Worked on splitting up and deciding what to present with the other group.
+
+## 6/9/24
+
+Finished the video, worked on presenation.md.
+
 
 ## Lisa Li
 
