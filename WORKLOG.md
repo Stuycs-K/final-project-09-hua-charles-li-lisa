@@ -1,10 +1,9 @@
 # Work Log
 
 ## References and Resources
-
-Wikipedia: https://en.wikipedia.org/wiki/Hill_cipher
-Dcode: https://www.dcode.fr/hill-cipher
-Crypto Cornerr: https://crypto.interactive-maths.com/hill-cipher.html
+- Wikipedia: https://en.wikipedia.org/wiki/Hill_cipher
+- Dcode: https://www.dcode.fr/hill-cipher
+- Crypto Cornerr: https://crypto.interactive-maths.com/hill-cipher.html
 
 ## Charles Hua
 
@@ -77,4 +76,4 @@ Make more test cases (aka long 2x2 messages), add references/resources, planning
 
 ## 6/07/24
 
-Updating PRESENTATION.md, figuring out with the other group how we should split the topics for the video, as well as within my group.
+Updating PRESENTATION.md, figuring out with the other group how we should split the topics for the video, as well as within my group. Filmed and edited the presentation video as well as updated extra information on the .md files.
