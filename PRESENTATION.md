@@ -12,8 +12,8 @@ First, for a message that is only n characters long, we just have to convert the
 - Second, for a message longer than n characters, you'd want the length to be a multiple of n. This could mean tacking on an extra character (or two). Next, you split the message every n characters. For example, THISISAHILLL will be split like THI | SIS | AHI | LLL, if n is 3. This will make you a bunch off nx1 matrices. You then just repeat the process for the shorter message until all the shortened messages have been encrypted (multiplied and modulo 26). Finally, combine all the n length fragments to get your full cipher text.
 
 key space size:
-For nxn keys that are invertible mod 26, there are 26^n^2(1-1/2)(1-1/2^2)...(1-1/2^n)(1-1/13)(1-1/13^2)...(1-1/13^n) possible keys.
-They will take up about 4.64n^2 - 1.7 bits.
+- For nxn keys that are invertible mod 26, there are 26^n^2(1-1/2)(1-1/2^2)...(1-1/2^n)(1-1/13)(1-1/13^2)...(1-1/13^n) possible keys.
+- They will take up about 4.64n^2 - 1.7 bits.
 
 demo:
 - Now, we'll show you a little bit of how our encode and decode works for 2x2 and 3x3 matrices. One thing to keep in mind is that the encode will always work, but the decode may not. This is because using our method of calculating the inverse matrix of the key, there isn't always an inverse matrix, meaning that the message can't be decoded.
