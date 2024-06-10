@@ -153,7 +153,7 @@ public class decoder{
           break;
         }
         if (tmp == (a * midet) % 26){
-          System.out.println("There is no modular muliplicative inverse.");
+          System.out.println("There is no modular multiplicative inverse.");
           inverseM = false;
           break;
         }
@@ -236,7 +236,7 @@ public class decoder{
           break;
         }
         if (tmp == (a * midet) % 26){
-          System.out.println("There is no modular muliplicative inverse.");
+          System.out.println("There is no modular multiplicative inverse.");
           inverseM = false;
           break;
         }
